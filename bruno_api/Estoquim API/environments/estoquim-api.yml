@@ -1,0 +1,4 @@
+name: estoquim-api
+variables:
+  - name: baseURL
+    value: http://127.0.0.1:8000
