@@ -1,9 +1,67 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Git Atlas</h1>
-    <h2>Grupo LTAA</h2>
-    <h2>Endpoints do Usuário</h2>
-    <h3>Criar usuário</h3>
-    <p>http://127.0.0.1:8000/userprofile/register/</p>
+    <header>
+        <span class="badge">API Documentation</span>
+        <h1>Estoquim API</h1>
+        <p class="lead">Esta é a página única de documentação da API. Todos os recursos do projeto são expostos apenas via endpoints REST, não há interface web adicional além desta página.</p>
+    </header>
+
+    <section>
+        <h2>Como usar</h2>
+        <p>Use requisições HTTP com o método indicado em cada endpoint. Envie JSON no corpo da requisição quando o endpoint aceitar dados. Veja abaixo a lista de endpoints disponíveis.</p>
+    </section>
+
+    <section>
+        <h2>Endpoints disponíveis</h2>
+        <ul class="endpoint-list">
+            <li class="endpoint-item">
+                <strong>Registrar usuário</strong>
+                <span class="endpoint-url">POST /userprofile/register/</span>
+                <p>Cria um novo usuário e perfil associado.</p>
+                <p>Exemplo de body JSON:</p>
+                <pre>{
+  "username": "usuario",
+  "password": "senha123",
+  "email": "usuario@exemplo.com",
+  "birthdate": "1990-01-01"
+}</pre>
+            </li>
+
+            <li class="endpoint-item">
+                <strong>Login de usuário</strong>
+                <span class="endpoint-url">POST /userprofile/login/</span>
+                <p>Autentica credenciais e cria sessão para o usuário.</p>
+                <p>Exemplo de body JSON:</p>
+                <pre>{
+  "username": "usuario",
+  "password": "senha123"
+}</pre>
+            </li>
+
+            <li class="endpoint-item">
+                <strong>Ver perfil do usuário</strong>
+                <span class="endpoint-url">POST /userprofile/view/</span>
+                <p>Retorna os dados do usuário autenticado. Requer sessão ativa.</p>
+            </li>
+
+            <li class="endpoint-item">
+                <strong>Listar usuários</strong>
+                <span class="endpoint-url">POST /userprofile/list/</span>
+                <p>Retorna a lista de perfis de usuários. Requer usuário staff autenticado.</p>
+            </li>
+        </ul>
+    </section>
+
+    <div class="note">
+        <strong>Observações importantes</strong>
+        <p>Esta página é apenas para documentação.<br />
+        Todos os endpoints aceitam JSON e retornam JSON quando suportado.<br />
+        Requisições GET não são usadas nos endpoints listados, apenas POST.</p>
+    </div>
+
+    <footer class="footer">
+        <p>Rota principal: <code>/</code></p>
+        <p>Use esta página para entender os caminhos e o formato esperado das requisições.</p>
+    </footer>
 {% endblock %}

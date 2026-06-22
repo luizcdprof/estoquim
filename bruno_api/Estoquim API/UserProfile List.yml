@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseURL}}/userprofile/view/"
+  url: "{{baseURL}}/userprofile/list/"
   headers:
     - name: x-requested-with
       value: XMLHttpRequest
